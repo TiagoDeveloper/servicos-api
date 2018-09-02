@@ -17,7 +17,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
@@ -44,14 +43,7 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter{
 	 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-//		http.authorizeRequests().antMatchers("/tarefas**","/oauth/token").permitAll()
-//		.and()
-//		.authorizeRequests().anyRequest().authenticated()
-//		.and()
-//		.cors()
-//		.and()
-//		.csrf().disable();
-		http.requestMatchers().antMatchers(HttpMethod.OPTIONS,"/oauth/token")
+		http.requestMatchers().antMatchers(HttpMethod.OPTIONS,"/**")
 		.and()
 		.cors()
 		.and()

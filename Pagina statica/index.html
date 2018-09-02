@@ -42,10 +42,10 @@
             var loginOauth = {
                 "async": true,
                 "crossDomain": true,
-                "url": "http://localhost:8080/oauth/token?grant_type=password&username=tiago&password=123",
+                "url": "http://localhost:8080/oauth/token?grant_type=password&username=tiago&password=123",//scope oauth2 and user and password of springsecurity
                 "method": "POST",
                 "headers": {
-                    "Authorization": "Basic c2Vydmljb3M6MTIzNA==",
+                    "Authorization": "Basic c2Vydmljb3M6MTIzNA==",//client_id and secret oauth2 servicos:1234 encoded base64
                     "Content-type": "application/x-www-form-urlencoded; charset=utf-8"
                 }
             }
@@ -55,7 +55,7 @@
                 "url": "http://localhost:8080/servicos",
                 "method": "GET",
                 "headers": {
-                    "Authorization": "Basic bXktdHJ1c3RlZC1jbGllbnQ6c2VjcmV0",
+                    "Authorization": "bearer [o token vem aqui]",
                 }
             }
 
